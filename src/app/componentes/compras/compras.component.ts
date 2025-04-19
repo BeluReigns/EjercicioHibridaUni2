@@ -22,7 +22,16 @@ export class ComprasComponent implements OnInit {
 
   // al inicio de ciclo de vida recupero la lista con el servicio y guardándolos en listaProductos
   ngOnInit() {
+    this._actualizar()
+  }
+
+  private _actualizar() {
     this.listaProductos = this.productoService.getProductos()
   }
 
+  onCreateProduct($event: string) {
+    const producto = new Producto($event)
+    this.productoService.agregarProducto(producto)
+    this._actualizar()
+  }
 }

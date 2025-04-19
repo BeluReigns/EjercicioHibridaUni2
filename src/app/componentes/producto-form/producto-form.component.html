@@ -1,3 +1,8 @@
-<!-- para probar. Después pasamos a ionic --> 
-<input type="text" />
-<button>Enviar</button>
+<!-- importar FormsModule para usar ngModel --> 
+<input [(ngModel)]="productoStr" type="text" />
+<button (click)="onClick()">
+    Enviar
+</button>
+
+<!-- creamos un evento en el componente hijo, este formulario es eso un formulario, el proceso
+del formulario lo hace el Padre, en este caso compras como lo que debe hacer al apretar botón --> 
