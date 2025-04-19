@@ -1,8 +1,37 @@
-<!-- importar FormsModule para usar ngModel --> 
-<input [(ngModel)]="productoStr" type="text" />
-<button (click)="onClick()">
-    Enviar
-</button>
+<ion-list lines="none">
+  <ion-item>
+    <ion-input 
+			[(ngModel)]="productoStr" 
+			required="requires"
+			minlength="2"
+			#productoInput="ngModel" 
+      label="Producto por comprar" 
+      placeholder="Queso" 
+      labelPlacement="stacked" />
+    <ion-button 
+			[disabled]="!productoInput.valid" 
+			(click)="onClick()"
+			slot="end" 
+			fill="clear" 
+			aria-label="Botón para agregar producto a la lista">
+        <ion-icon slot="icon-only" name="add-circle-outline" />
+    </ion-button>
+  </ion-item>
+	<ion-item>
+		<ion-text 
+			[hidden]="productoInput.valid || productoInput.pristine"
+			color="danger">
+			¡Escriba un producto de 2 o más letras!</ion-text>
+	</ion-item>   
+</ion-list>
 
-<!-- creamos un evento en el componente hijo, este formulario es eso un formulario, el proceso
-del formulario lo hace el Padre, en este caso compras como lo que debe hacer al apretar botón --> 
+
+<!-- < > creamos un evento en el componente hijo, este formulario es eso un formulario, el proceso
+del formulario lo hace el Padre, en este caso compras como lo que debe hacer al apretar botón 
+VALIDACIONES bajo ngModel y sobre slot--> 
+
+<!-- importar FormsModule para usar ngModel 
+<input [(ngModel)]="productoStr" type="text" />
+<button (click)="onClick() type="button" >
+    Enviar
+</button> --> 

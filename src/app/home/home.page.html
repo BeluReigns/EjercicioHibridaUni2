@@ -3,6 +3,13 @@
     <ion-title>
       App Compras
     </ion-title>
+    <!-- agregar btotón para ir a la configuración de la aplicación, por ejemplo para ordenar.
+     agrega las etiquetas usadas por primera vez, automáticamente en el .ts -->    
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/configuracion']">
+        <ion-icon icon="settings-outline" />
+      </ion-button>
+    </ion-buttons>  
   </ion-toolbar>
 </ion-header>
 
