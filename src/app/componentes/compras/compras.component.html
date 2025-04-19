@@ -1,0 +1,5 @@
+<!-- primero va a mostrar al form y luego a la lista, en este componente que los hace "trabajar en conjunto"--> 
+<app-producto-form/>
+<!-- pasamos la variable del @Input y ="listaPadre"
+ así al renderizar app-p-l le pasa la listaPadre--> 
+<app-producto-list [productos]="listaProductos"/>
