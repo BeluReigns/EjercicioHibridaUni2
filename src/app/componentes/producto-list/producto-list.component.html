@@ -1,3 +1,18 @@
+<ion-list>
+  <ion-item *ngFor="let p of productos">
+    <ion-label>
+      <span *ngIf="!p.comprado">{{p.nombre}}</span>
+      <s *ngIf="p.comprado">{{p.nombre}}</s>
+    </ion-label>
+    <ion-checkbox 
+      [checked]="p.comprado"
+      (ionChange)="p.comprado = !p.comprado"
+      slot="end"
+      aria-label="Checkbox que marca si el producto ya fue comprado o añadido al carro"
+    />
+  </ion-item>
+</ion-list>
+
 <!-- representacion datos duros de lista[] solo html para probar 
   <ul>
     <li>Pan</li>
@@ -5,7 +20,9 @@
     <li>Leche</li>    
   </ul>--> 
 
-  <!-- importar CommonModule para poder recorrer lista-->
+  <!-- importar CommonModule para poder recorrer lista
 <ul>
   <li *ngFor="let p of productos">{{p.nombre}}</li>
-</ul>
+</ul> -->
+
+

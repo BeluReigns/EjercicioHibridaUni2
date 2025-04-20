@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Producto } from 'src/app/modelo/producto';
+import { IonItem, IonList, IonLabel, IonCheckbox } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-producto-list',
   templateUrl: './producto-list.component.html',
   styleUrls: ['./producto-list.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [IonCheckbox, IonLabel, IonList, IonItem, CommonModule]
 })
 export class ProductoListComponent  implements OnInit {
 
